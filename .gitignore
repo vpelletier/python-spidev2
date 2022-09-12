@@ -1,0 +1,3 @@
+/dist
+/spidev2.egg-info
+*.pyc

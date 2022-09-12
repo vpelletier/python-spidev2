@@ -1,0 +1,2 @@
+include versioneer.py
+include spidev2/_version.py
