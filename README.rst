@@ -41,6 +41,7 @@ This is only to be taken as a quick overview of this module's API.
         # immutable, it will be copied
         received = spi.transfer(
             tx_buf=b'\x12\x34\x00\x00',
+            rx_buf=bytearray(4),
             speed_hz=1_000_000,
         )[2:]
 
@@ -73,10 +74,10 @@ This is only to be taken as a quick overview of this module's API.
         # (reducing memory allocation operations).
         spi_tx_buffer = bytearray(b'\x12\x34')
         received = bytearray(2)
-        transfer_list = SPITransgerList((
+        transfer_list = SPITransferList((
             {
                 'tx_buf': spi_tx_buffer,
-                'speed_hz': 1_000_000,
+                'speed_hz': 100_000,
             },
             {
                 'rx_buf': received,
